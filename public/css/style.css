@@ -1,0 +1,518 @@
+/* Basic Body and Typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header li {
+    margin-left: 20px;
+}
+
+/* Form Styling */
+.form-container {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box; 
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.btn {
+    /* Set display to inline-block for consistent sizing */
+    display: inline-block; 
+    
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #333; /* Ensure a consistent border */
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none; /* Remove underline from <a> tags */
+    font-size: 1em; /* Make font size consistent */
+    vertical-align: middle; /* Align buttons next to each other nicely */
+    
+    /*   the smooth hover effect */
+    transition: transform 0.2s ease-in-out; 
+}
+/* Messages */
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #f5c6cb;
+    border-radius: 3px;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #c3e6cb;
+    border-radius: 3px;
+}
+
+/* header logo */
+.site-logo {
+      display: block;
+      width: 150px;     
+      height: 10%;
+      margin: 10px auto;  
+}
+header {
+      text-align: left;
+      margin-bottom: 40px;
+}
+/* --- Styling for Input with Autocomplete --- */
+
+/* The main container holding the tags and the input field */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    
+}
+
+
+
+/* --- Base style for both input and display tags --- */
+.tag, .hashtag {
+    display: inline-flex; /* Use flexbox for easy alignment */
+    align-items: center;  /* Center content vertically */
+    padding: 6px 12px;
+    margin: 4px;
+    
+    /* Colors and Appearance */
+    background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Subtle gradient for depth */
+    color: #333;
+    border-radius: 16px; /* Rounded pill shape */
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05),   /* Bottom-right shadow */
+                -2px -2px 5px rgba(255, 255, 255, 0.7); /* Top-left highlight for a "pressed" effect */
+
+    /* Typography */
+    font-size: 0.9em;
+    font-weight: 500; /* Bolder than normal text */
+    
+    /* Animation */
+    transition: all 0.2s ease-in-out;
+}
+
+/* --- Style specifically for display tags on single_post.php --- */
+.hashtag {
+    cursor: pointer; /* Makes it look clickable */
+}
+
+.hashtag:hover {
+    transform: translateY(-2px); /* Lifts the button on hover */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), 
+                -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+
+/* --- Styles specifically for the close button ('x') inside editor tags --- */
+.tag .tag-close {
+    margin-left: 8px;
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.tag .tag-close:hover {
+    color: #d9534f; /* A reddish color on hover for delete action */
+}
+
+
+
+/* The actual input field where the user types */
+#hashtags-input {
+    border: none;
+    outline: none;
+    padding: 6px;
+    flex-grow: 1; /* Allows the input to take up remaining space */
+    min-width: 150px; /* Ensures it doesn't get too small */
+}
+
+/* --- Styling for the Suggestions Dropdown --- */
+.suggestions-box {
+    position: relative; 
+    width: 100%;
+}
+
+/* The suggestions list itself */
+.suggestions-box ul {
+    position: absolute;
+    top: 2px; /* Small gap below the input box */
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.suggestions-box li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-box li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+/* --- Styling for Post Lists --- */
+.posts-list .post-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.posts-list h2 {
+    margin-top: 0;
+}
+
+.posts-list h2 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.posts-list h2 a:hover {
+    color: #555;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* --- Styling for Single Post and Recommendations --- */
+.single-post .post-body {
+    line-height: 1.8;
+    margin-top: 1.5rem;
+}
+
+.hashtags {
+    margin: 1rem 0;
+}
+
+
+
+.recommendations ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommendations li {
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    border-left: 3px solid #ddd;
+}
+
+.recommendations li a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Styling for Form Elements  */
+
+.form-group input,
+.form-group textarea {  
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box; 
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+
+.form-group textarea {
+    height: 50vh; 
+    resize: vertical; 
+}
+
+/* Styling for Post Action Buttons */
+.post-actions {
+    margin: 1rem 0;
+}
+.btn-danger {
+    background: #d9534f;
+    border-color: #d43f3a;
+}
+.btn-danger:hover {
+    background: #c9302c;
+    border-color: #020101;
+   
+}
+
+.btn:hover,
+.btn-create:hover,
+.btn-danger:hover {
+    transform: scale(1.05); /* Enlarge buttons by 5% on hover */
+}
+
+.btn-create{
+    background-color: #ffffff;
+    text-decoration: none;
+    position: fixed;
+    top: 32%;
+    left: 12%;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid #0a0a0a;
+    z-index: 1000;
+    padding:1.5%;
+}
+
+@media (max-width: 768px) {
+    .btn-create {
+        /* Change position to static */
+        position: relative; 
+        
+        /* Remove fixed positioning values */
+        top: auto; 
+        left: auto;
+        
+        width: 90%; 
+        max-width: 300px; /* Optional: cap the width for very small screens */
+        
+        /* Center the button horizontally */
+        margin: 1rem auto;
+        
+        /* Ensure it's a block element to use margin auto and full width */
+        display: block; 
+        
+        
+        padding: 15px 0; /* Increase vertical padding for tap target */
+        font-size: 1.1em;
+        
+        /* Add a clear visual separator if needed */
+        margin-top: 20px; 
+    }
+    
+    
+    .btn-create .href {
+        display: block; 
+        text-align: center;
+    }
+}
+
+/*create new button text*/
+.href{
+    text-decoration: none;
+    color: #020101;
+    font-family: 'inter', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+   
+}
+
+/* title for post page*/
+.hashtag-title {
+    background-color: #eee;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+/*account name*/
+.accnt-name{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    padding:1%;
+}
+
+/* --- NEW ADVANCED SEARCH UI STYLES --- */
+.search-container {
+    margin-bottom: 2rem;
+}
+
+.main-search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex-grow: 1; /* Makes the input take up most of the space */
+}
+
+#main-search-input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Style for icon buttons */
+.icon-btn {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.icon-btn.search-btn {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+/* Filter section for tags */
+.tags-group {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}
+
+.search-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-form legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.search-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.search-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.tags-group .tags-checkbox-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.tag-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.tag-checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.tag-checkbox label {
+    font-weight: normal;
+    cursor: pointer;
+}
